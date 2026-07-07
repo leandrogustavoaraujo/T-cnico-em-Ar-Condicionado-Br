@@ -596,7 +596,7 @@ src="https://www.facebook.com/tr?id=989728143663966&ev=PageView&noscript=1"
         <img src="HERO_AIRES.webp" alt="Mockup do curso Técnico em Ar-Condicionado do Zero ao Avançado">
       </div>
 
-      <a href="https://pay.wiapy.com/prOjU_QrG9J" class="btn-main btn-hero-main js-checkout">GARANTIR MINHA VAGA</a>
+      <a href="#purchase" class="btn-main btn-hero-main">GARANTIR MINHA VAGA</a>
     </div>
   </section>
 
@@ -613,7 +613,7 @@ src="https://www.facebook.com/tr?id=989728143663966&ev=PageView&noscript=1"
         <div class="card"><div class="card-icon">04</div><p class="card-title">Primeiros clientes</p><p class="card-body">Como precificar com critério, montar uma oferta simples, se apresentar e conseguir seus primeiros atendimentos.</p></div>
       </div>
 
-      <a href="https://pay.wiapy.com/prOjU_QrG9J" class="btn-main js-checkout">GARANTIR MINHA VAGA</a>
+      <a href="#purchase" class="btn-main">GARANTIR MINHA VAGA</a>
     </div>
   </section>
 
@@ -678,7 +678,7 @@ src="https://www.facebook.com/tr?id=989728143663966&ev=PageView&noscript=1"
         </div>
       </div>
 
-      <a href="https://pay.wiapy.com/prOjU_QrG9J" class="btn-main js-checkout">GARANTIR MINHA VAGA</a>
+      <a href="#purchase" class="btn-main">GARANTIR MINHA VAGA</a>
     </div>
   </section>
 
@@ -716,7 +716,7 @@ src="https://www.facebook.com/tr?id=989728143663966&ev=PageView&noscript=1"
         <div class="review-card"><div class="review-top"><div class="avatar"><img src="FT_3_AIRES.webp" alt="José Q." loading="lazy"></div><div><p class="review-name">José Q.</p><p class="review-city">Curitiba, PR</p></div></div><div class="stars">★★★★★</div><p class="review-text">“O melhor é que o conteúdo vai direto ao ponto. Em poucas semanas eu já estava oferecendo serviços de manutenção na minha região.”</p></div>
       </div>
 
-      <a href="https://pay.wiapy.com/prOjU_QrG9J" class="btn-main js-checkout">GARANTIR MINHA VAGA</a>
+      <a href="#purchase" class="btn-main">GARANTIR MINHA VAGA</a>
     </div>
   </section>
 
@@ -743,7 +743,7 @@ src="https://www.facebook.com/tr?id=989728143663966&ev=PageView&noscript=1"
         <div class="faq-item"><button class="faq-question" type="button">Funciona em qualquer lugar do Brasil?<span class="faq-arrow">⌄</span></button><div class="faq-answer"><div class="faq-answer-inner">Sim. A lógica de instalação, manutenção e diagnóstico se aplica em todo o Brasil. O que muda é preço, demanda, concorrência local e normas específicas de cada região.</div></div></div>
       </div>
 
-      <a href="https://pay.wiapy.com/prOjU_QrG9J" class="btn-main js-checkout">GARANTIR MINHA VAGA</a>
+      <a href="#purchase" class="btn-main">GARANTIR MINHA VAGA</a>
     </div>
   </section>
 
@@ -752,11 +752,14 @@ src="https://www.facebook.com/tr?id=989728143663966&ev=PageView&noscript=1"
   </footer>
 
 <script>
-  const diasSemana = ['domingo','segunda-feira','terça-feira','quarta-feira','quinta-feira','sexta-feira','sábado'];
-  const meses = ['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
   const now = new Date();
   const urgencyDate = document.getElementById('urgency-date');
-  if (urgencyDate) urgencyDate.textContent = diasSemana[now.getDay()] + ', ' + now.getDate() + ' de ' + meses[now.getMonth()];
+  if (urgencyDate) {
+    const dia = String(now.getDate()).padStart(2, '0');
+    const mes = String(now.getMonth() + 1).padStart(2, '0');
+    const ano = String(now.getFullYear()).slice(-2);
+    urgencyDate.textContent = `${dia}/${mes}/${ano}`;
+  }
 
   function updateCountdown() {
     const current = new Date();
