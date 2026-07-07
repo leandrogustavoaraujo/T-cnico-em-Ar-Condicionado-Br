@@ -565,23 +565,22 @@
     *, *::before, *::after { animation: none !important; scroll-behavior: auto !important; }
   }
 </style>
-<!-- Meta Pixel Code -->
 <script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '989728143663966');
-fbq('track', 'PageView');
+  window.pixelId = "6a4cdbf16f0af078e4ec4a72";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
 </script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=989728143663966&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+
+<script
+  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+  data-utmify-prevent-xcod-sck
+  data-utmify-prevent-subids
+  async
+  defer
+></script>
 </head>
 <body>
   <div id="urgency-bar">OFERTA VÁLIDA HOJE · <span id="urgency-date"></span></div>
@@ -700,7 +699,7 @@ src="https://www.facebook.com/tr?id=989728143663966&ev=PageView&noscript=1"
         <p class="price-new display"><span>R$</span>27,00</p>
         <p class="price-note">Pagamento único · acesso imediato</p>
 
-        <a href="https://pay.wiapy.com/prOjU_QrG9J" class="btn-main btn-static js-checkout" style="width:100%;">GARANTIR MINHA VAGA</a>
+        <a href="https://pay.hotmart.com/C106584372E" class="btn-main btn-static js-checkout" style="width:100%;">GARANTIR MINHA VAGA</a>
       </div>
     </div>
   </section>
@@ -752,14 +751,11 @@ src="https://www.facebook.com/tr?id=989728143663966&ev=PageView&noscript=1"
   </footer>
 
 <script>
+  const diasSemana = ['domingo','segunda-feira','terça-feira','quarta-feira','quinta-feira','sexta-feira','sábado'];
+  const meses = ['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
   const now = new Date();
   const urgencyDate = document.getElementById('urgency-date');
-  if (urgencyDate) {
-    const dia = String(now.getDate()).padStart(2, '0');
-    const mes = String(now.getMonth() + 1).padStart(2, '0');
-    const ano = String(now.getFullYear()).slice(-2);
-    urgencyDate.textContent = `${dia}/${mes}/${ano}`;
-  }
+  if (urgencyDate) urgencyDate.textContent = diasSemana[now.getDay()] + ', ' + now.getDate() + ' de ' + meses[now.getMonth()];
 
   function updateCountdown() {
     const current = new Date();
@@ -788,11 +784,7 @@ src="https://www.facebook.com/tr?id=989728143663966&ev=PageView&noscript=1"
     });
   });
 
-  document.querySelectorAll('.js-checkout').forEach(link => {
-    link.addEventListener('click', () => {
-      if (typeof fbq === 'function') fbq('track', 'InitiateCheckout');
     });
-  });
 </script>
 </body>
 </html>
